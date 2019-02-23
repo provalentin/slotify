@@ -1,47 +1,13 @@
 <?php
+	include("includes/Account.php");
+	include("includes/Constants.php");
 
+	$account = new Account();
 
-if(isset($_POST['loginButton'])) {
-	echo "login button was pressed";
-}
-
-if(isset($_POST['registerButton'])) {
-	echo "register button was pressed\n";
-	
-	$username = sanitizeFormUserName($_POST['username']);
-	
-	$firstName = sanitizeFormString($_POST['firstName']);
-
-	$lastName = sanitizeFormString($_POST['lastName']);
-	
-	$email = sanitizeFormString($_POST['email']);
-
-	$email2 = sanitizeFormString($_POST['email2']);
-
-	$password = sanitizeFormPassword($_POST["password"]);
-
-	$password2 = sanitizeFormPassword($_POST["password2"]);
-}
-
-function sanitizeFormUserName($inputText){
-	$inputText = strip_tags($inputText);
-	$inputText = str_replace(" ", "", $inputText);
-	return $inputText;
-}
-
-function sanitizeFormString($inputText){
-	$inputText = strip_tags($inputText);
-	$inputText = str_replace(" ", "", $inputText);
-	$inputText = ucfirst(strtolower($inputText));
-	return $inputText;
-}
-
-function sanitizeFormPassword($inputText){
-	$inputText = strip_tags($inputText);
-	return $inputText;
-}
-
+	include("includes/handlers/register-handler.php");
+	include("includes/handlers/login-handler.php");
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,6 +18,7 @@ function sanitizeFormPassword($inputText){
 		<form id="loginForm" action="register.php" method="POST">
 			<h2>Login to your account</h2>
 			<p>
+				<?php echo $account->getError("Your username must be between 5 and 25 characters"); ?>
 				<label for="loginUsername">Username</label>
 				<input id="loginUsername" name="loginUsername" type="text" placeholder="e.g. bart sympson" required>
 
