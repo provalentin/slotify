@@ -32,7 +32,7 @@
 
 		private function validateUsername($un) {
 			if(strlen($un)>25 || strlen($un) < 5) {
-				$this->array_push($this->errorArray, Constants::$usernameCharacters);
+				array_push($this->errorArray, Constants::$usernameCharacters);
 				return;
 			}
 			//TODO: check if username exists
@@ -40,14 +40,14 @@
 
 		private function validateFirstname($un) {
 			if(strlen($un)>25 || strlen($un) < 2) {
-				$this->array_push($this->errorArray, Constants::$firstNameCharacters);
+				array_push($this->errorArray, Constants::$firstNameCharacters);
 				return;
 			}
 		}
 
 		private function validateLastname($un) {
 			if(strlen($un)>25 || strlen($un) < 2) {
-				$this->array_push($this->errorArray, Constants::$lastNameCharacters);
+				array_push($this->errorArray, Constants::$lastNameCharacters);
 				return;
 			}
 		}
@@ -76,8 +76,8 @@
 			}
 
 			if(strlen($pw)>30 || strlen($pw) < 5) {
-			$this->array_push($this->errorArray, Constants::$passwordCharacters);
-			return;
+				array_push($this->errorArray, Constants::$passwordCharacters);
+				return;
 			}
 
 			//TODO: check that username hasn't already been used

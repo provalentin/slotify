@@ -1,6 +1,6 @@
 <?php
 
-class Contants {
+class Constants {
 	public static $passwordsDoNotMatch = "Your passwords don't match";
 	public static $firstNameCharacters = "Your FirstName must be between 2 and 25 characters";
 	public static $lastNameCharacters = "Your LastName must be between 2 and 25 characters";
