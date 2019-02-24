@@ -34,12 +34,13 @@
 					<p>
 						<?php echo $account->getError("Your username must be between 5 and 25 characters"); ?>
 						<label for="loginUsername">Username</label>
-						<input id="loginUsername" name="loginUsername" type="text" placeholder="e.g. bart sympson" required>
+						<input id="loginUsername" name="loginUsername" type="text" placeholder="e.g. bart sympson" value="<?php getInputValue('username')?>" required>
 
 					</p>
 					<p>	
 						<label for="loginPassword">Password</label> 
-						<input id="loginPassword" name="loginPassword" type="password" required>
+						<input id="loginPassword" name="loginPassword" type="password" 
+						value="<?php getInputValue('password')?>"required>
 					</p>
 					<button type="submit" name="loginButton">LOG IN</button>
 
@@ -103,8 +104,20 @@
 					</div>
 				</form>
 			</div>
+			<div id="loginText">
+				<h1>Get great music, right now</h1>
+				<h2>Listen to loads of songs for free</h2>
+				<ul>
+				<li> Discover music you'll fall in love </li>
+				<li> Create your own playlists </li>
+				<li> Follow artists to keep up to date </li>
+				</ul>
+			</div>
+
 		</div>
 	</div>
+
+
 
 </body>
 </html>
